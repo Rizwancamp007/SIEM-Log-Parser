@@ -1,0 +1,18 @@
+{
+  "name": "siem-log-parser",
+  "version": "1.0.0",
+  "description": "Real-time SIEM log parser and alerting dashboard — Node.js + WebSockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev":   "node server.js"
+  },
+  "keywords": ["siem", "security", "log-parser", "websocket", "cybersecurity", "dashboard"],
+  "author": "Rizwan",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "express":  "^4.19.2",
+    "ws":       "^8.17.0"
+  }
+}

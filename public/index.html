@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIEM Console — Real-Time Security Operations Dashboard</title>
+  <meta name="description" content="Real-time SIEM log parser and alerting console. Monitors auth.log for SQL injection, XSS, brute force, and path traversal attacks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Background Grid ─────────────────────────────────── -->
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="scanline" aria-hidden="true"></div>
+
+<!-- ── Header ─────────────────────────────────────────── -->
+<header id="header" role="banner">
+  <div class="header-left">
+    <div class="logo-icon" aria-hidden="true">⬡</div>
+    <div class="header-title-group">
+      <h1 class="header-title">SIEM CONSOLE</h1>
+      <span class="header-sub">Security Information &amp; Event Management</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="ws-status" id="ws-status" aria-live="polite">
+      <span class="ws-dot" id="ws-dot"></span>
+      <span id="ws-label">Connecting…</span>
+    </div>
+    <button id="btn-audio" class="ctrl-btn" aria-label="Toggle audio alerts" title="Toggle Audio Alerts">🔊 Audio</button>
+    <button id="btn-clear" class="ctrl-btn danger" aria-label="Clear all alerts" title="Clear All Alerts">🗑 Clear</button>
+  </div>
+</header>
+
+<!-- ── Ticker Bar ──────────────────────────────────────── -->
+<div id="ticker-bar" class="ticker-bar" role="status" aria-live="polite" aria-label="Latest alerts">
+  <span class="ticker-label">⚡ LIVE</span>
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-item muted">Monitoring … waiting for threats</span>
+  </div>
+</div>
+
+<!-- ── Main Layout ─────────────────────────────────────── -->
+<main id="main-content">
+
+  <!-- Row 1: Metric Cards -->
+  <section class="metrics-row" aria-label="Summary metrics">
+
+    <article class="metric-card" id="card-total">
+      <div class="metric-icon">📋</div>
+      <div class="metric-body">
+        <div class="metric-value" id="stat-lines">0</div>
+        <div class="metric-label">Log Lines Processed</div>
+      </div>
+      <div class="metric-bar-wrap"><div class="metric-bar cyan" id="bar-lines"></div></div>
+    </article>
+
+    <article class="metric-card" id="card-alerts">
+      <div class="metric-icon">🚨</div>
+      <div class="metric-body">
+        <div class="metric-value alert-red" id="stat-alerts">0</div>
+        <div class="metric-label">Total Threats Detected</div>
+      </div>
+      <div class="metric-bar-wrap"><div class="metric-bar red" id="bar-alerts"></div></div>
+    </article>
+
+    <article class="metric-card" id="card-critical">
+      <div class="metric-icon">💀</div>
+      <div class="metric-body">
+        <div class="metric-value crit" id="stat-critical">0</div>
+        <div class="metric-label">Critical Severity</div>
+      </div>
+      <div class="metric-bar-wrap"><div class="metric-bar orange" id="bar-critical"></div></div>
+    </article>
+
+    <article class="metric-card" id="card-ips">
+      <div class="metric-icon">🌐</div>
+      <div class="metric-body">
+        <div class="metric-value cyan" id="stat-ips">0</div>
+        <div class="metric-label">Unique Attacker IPs</div>
+      </div>
+      <div class="metric-bar-wrap"><div class="metric-bar cyan" id="bar-ips"></div></div>
+    </article>
+
+  </section>
+
+  <!-- Row 2: Log Feed + Alert Feed -->
+  <section class="dual-row" aria-label="Live feeds">
+
+    <!-- Green Log Terminal -->
+    <div class="panel glass" id="panel-log">
+      <div class="panel-header">
+        <span class="panel-title">📟 Live Log Stream</span>
+        <span class="live-badge" id="log-count-badge">0 lines</span>
+      </div>
+      <div class="log-terminal" id="log-terminal" role="log" aria-live="polite" aria-label="Live log stream">
+        <p class="log-line muted">[SIEM] Monitoring logs/auth.log …</p>
+      </div>
+    </div>
+
+    <!-- Alert Ticker Panel -->
+    <div class="panel glass" id="panel-alerts">
+      <div class="panel-header">
+        <span class="panel-title">🚨 Active Threat Feed</span>
+        <span class="live-badge red-badge" id="alert-count-badge">0 alerts</span>
+      </div>
+      <div class="alert-feed" id="alert-feed" role="log" aria-live="assertive" aria-label="Detected security threats">
+        <p class="no-alerts-msg">No threats detected yet. Start log-generator.py to simulate attacks.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Row 3: Charts -->
+  <section class="charts-row" aria-label="Analytics charts">
+
+    <div class="panel glass chart-panel" id="panel-doughnut">
+      <div class="panel-header">
+        <span class="panel-title">🎯 Severity Distribution</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chart-severity" aria-label="Severity distribution chart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel glass chart-panel" id="panel-line">
+      <div class="panel-header">
+        <span class="panel-title">📈 Attack Frequency (Last 30 min)</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chart-timeline" aria-label="Attack timeline chart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel glass chart-panel" id="panel-bar">
+      <div class="panel-header">
+        <span class="panel-title">🏴 Top Attack Types</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chart-types" aria-label="Attack type distribution chart"></canvas>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Row 4: Threat Detail Table -->
+  <section class="panel glass table-panel" aria-label="Alert details table">
+    <div class="panel-header">
+      <span class="panel-title">🗂 Alert Detail Log</span>
+      <div class="table-controls">
+        <input type="text" id="filter-input" class="filter-input" placeholder="Filter by IP, type, payload…" aria-label="Filter alerts" />
+        <select id="filter-severity" class="filter-select" aria-label="Filter by severity">
+          <option value="">All Severities</option>
+          <option value="CRITICAL">CRITICAL</option>
+          <option value="HIGH">HIGH</option>
+          <option value="MEDIUM">MEDIUM</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="alert-table" aria-label="Security alerts table">
+        <thead>
+          <tr>
+            <th scope="col">Severity</th>
+            <th scope="col">Time</th>
+            <th scope="col">Attack Type</th>
+            <th scope="col">Attacker IP</th>
+            <th scope="col">Payload Preview</th>
+          </tr>
+        </thead>
+        <tbody id="alert-tbody">
+          <tr><td colspan="5" class="empty-row">Awaiting threat data…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Audio Context (inaudible oscillator used as alert sound) ── -->
+<audio id="snd-critical" preload="auto">
+  <!-- Inline base64 very short beep WAV so no external file is needed -->
+</audio>
+
+<!-- ── Footer ──────────────────────────────────────────── -->
+<footer id="footer">
+  <span>SIEM Log Parser · Real-Time Alerting Console</span>
+  <span id="clock" aria-label="Current time"></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
